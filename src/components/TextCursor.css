@@ -1,0 +1,23 @@
+.text-cursor-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.text-cursor-inner {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.text-cursor-item {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 1.35rem;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 2px 8px rgba(75, 0, 130, 0.45));
+}

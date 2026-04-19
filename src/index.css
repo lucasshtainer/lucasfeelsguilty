@@ -1,0 +1,40 @@
+:root {
+  --purple-deep: #4b0082;
+  --page-bg: #4b0082;
+  --purple-rich: #6a0dad;
+  --purple-soft: #cf9fff;
+  --white: #ffffff;
+  --cream: #f7f2ff;
+  --shadow: rgba(43, 0, 86, 0.35);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Figtree', system-ui, sans-serif;
+  color: var(--cream);
+  background-color: var(--page-bg);
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--purple-soft);
+}

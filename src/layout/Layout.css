@@ -1,0 +1,111 @@
+.site {
+  position: relative;
+  z-index: 1;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--page-bg);
+  border-bottom: 1px solid rgba(207, 159, 255, 0.22);
+  box-shadow: 0 12px 40px var(--shadow);
+}
+
+.site-header__top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem 0.5rem;
+}
+
+.site-wordmark {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: var(--purple-soft);
+  text-decoration: none;
+}
+
+.site-wordmark:hover {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.letter-chips {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 1rem 0.85rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--purple-soft) transparent;
+}
+
+.letter-chips::-webkit-scrollbar {
+  height: 6px;
+}
+
+.letter-chips::-webkit-scrollbar-thumb {
+  background: rgba(207, 159, 255, 0.45);
+  border-radius: 999px;
+}
+
+.letter-chip {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 12px;
+  border: 1px solid rgba(207, 159, 255, 0.28);
+  background: rgba(75, 0, 130, 0.35);
+  text-decoration: none;
+  color: var(--cream);
+  min-width: 160px;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+}
+
+.letter-chip:hover {
+  text-decoration: none;
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(106, 13, 173, 0.45);
+  transform: translateY(-1px);
+}
+
+.letter-chip.is-active {
+  border-color: var(--purple-soft);
+  background: linear-gradient(135deg, rgba(207, 159, 255, 0.25), rgba(75, 0, 130, 0.55));
+  box-shadow: 0 0 0 1px rgba(207, 159, 255, 0.35);
+}
+
+.letter-chip__date {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--purple-soft);
+}
+
+.letter-chip__label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.25;
+}
+
+.site-main {
+  flex: 1;
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .letter-chips {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: visible;
+  }
+}
