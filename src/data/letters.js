@@ -1,3 +1,5 @@
+import { myGiftOfMoments } from './letterMyGiftOfMoments.js';
+
 /** @typedef {{ slug: string, isoDate: string, displayDate: string, galleryLabel: string, title: string, subtitle?: string, image: string, paragraphs: string[] }} Letter */
 
 /** @type {Letter[]} */
@@ -117,7 +119,8 @@ export const letters = [
       'To many more months alongside each other, celebrating the many small milestones, grand in meaning—the quiet routines that become ours without noticing, the laughter that lingers longer than it should, and the fleeting moments that, somehow, end up mattering the most.',
       'With Love & Affection,\nLucas'
     ]
-  }
+  },
+  myGiftOfMoments
 ].sort((a, b) => {
   const d = a.isoDate.localeCompare(b.isoDate);
   if (d !== 0) return d;
