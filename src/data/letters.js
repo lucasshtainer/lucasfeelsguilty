@@ -1,6 +1,6 @@
 import { myGiftOfMoments } from './letterMyGiftOfMoments.js';
 
-/** @typedef {{ slug: string, isoDate: string, displayDate: string, galleryLabel: string, title: string, subtitle?: string, image: string, paragraphs: string[] }} Letter */
+/** @typedef {{ slug: string, isoDate: string, displayDate: string, galleryLabel: string, title: string, subtitle?: string, image: string, paragraphs: string[], sameDayOrder?: number }} Letter */
 
 /** @type {Letter[]} */
 export const letters = [
@@ -106,6 +106,7 @@ export const letters = [
     title: 'Happy two months',
     subtitle: 'Spes, dreams, and not letting go',
     image: 'https://picsum.photos/seed/lfg-2mo/900/700',
+    sameDayOrder: 0,
     paragraphs: [
       'Dear Ava,',
       'Happy two months!',
@@ -120,10 +121,39 @@ export const letters = [
       'With Love & Affection,\nLucas'
     ]
   },
+  {
+    slug: '2026-04-01-three-months',
+    isoDate: '2026-04-01',
+    displayDate: 'April 1, 2026',
+    galleryLabel: 'Apr 1 · Three months',
+    title: 'Three months together',
+    subtitle: 'Strings, distance, and what “I love you” meant',
+    image: 'https://picsum.photos/seed/lfg-3mo/900/700',
+    sameDayOrder: 1,
+    paragraphs: [
+      'Dear Ava,',
+      'Wow, three months together already––this time together has really flown by.',
+      'It’s funny how some people you didn’t even talk to months ago have now become your whole life––it’s as if there are these invisible strings guiding individuals to one another throughout their lives. Who knew that our strings, the same ones alongside each other during the study of films in Daddy’s class, or the history of the overdone Amendments would eventually tangle, and lead to the beauty we now have.',
+      'I know that throughout the past months you might be sick of our constant letters and/or gifts, but I want to stress to you how much you truly mean to me.',
+      'Ava, when I first mentioned that I loved you––Saturday, April 11––it wasn’t out of a place of insecurity, or a need to hold onto something too tightly. It wasn’t because I was bored with my life or just wanted to lie to you at the moment, even though you claim I’m a pathological liar (hehehe). My proclamation of love came from a place of clarity, clarity caused by distance.',
+      'As you know, I’ve always been the kind of person who looks at life through the lens of optimism—the type who believes the glass is never half empty, but instead half full, no matter the circumstances. I tend to search for the good in situations, even when things feel uncertain or difficult, and I try to hold onto the belief that there is always something meaningful to take away from every experience.',
+      'Although the times we spend apart from one another may hurt, and sometimes even lead to disagreements, it has taught me just how much I value what we have. During our three weeks apart over spring break, while you were making your way through Shanghai, Hong Kong, and Beijing, and I was wandering through the golden temples of Japan, I realized something I couldn’t ignore: even in the middle of beautiful places and new experiences, there was an ache that followed me. A quiet, constant feeling that something was missing.',
+      'And that something was you.',
+      'It wasn’t just that I missed talking to you 1-on-1 or seeing you—it was deeper than that. I felt the absence of your presence in the smallest moments––the nighttime walks, the occasional flinch when you lift your hand, and the winced countenance that appears when I lean in for a kiss. That feeling made it clear to me that being apart doesn’t just create distance—it reveals how much my emotions are tied to you, how much brighter everything feels when you’re there with me.',
+      'That’s what I meant when I said I loved you. It wasn’t impulsive—it was something I came to understand, fully and honestly, in those moments when I felt your absence the most.',
+      'Yes, together we will face challenges, but we will surely succeed. Being apart has made me appreciate you more, not less. It reminded me that love isn’t just about the easy, happy times, but also about patience, understanding, and growing together through the difficult ones. And no matter the distance or the disagreements, I always find my way back to you.',
+      'I know the sudden shift from high school to college may be strenuous at times, but it proves to be another mountain we must climb. Another adventure that we will partake in. Another walk around the block, shivering in the cold while discussing the drama in our lives. Luckily, this shift in location will only be a 20 minute car drive away. Instead of our mountain posing itself as Everest, we will experience the beauty, sandy pits of an ant hill. We will push through, day-by-day, living in the moment, with our love growing to new heights.',
+      'Ava, I love you and can’t wait to see what’s ahead of us. To many more monthly celebrations alongside one another, long nights sneaking wine underneath the table, and aftercare rituals.',
+      'With Immense Love,\nLucas'
+    ]
+  },
   myGiftOfMoments
 ].sort((a, b) => {
   const d = a.isoDate.localeCompare(b.isoDate);
   if (d !== 0) return d;
+  const oa = a.sameDayOrder ?? 0;
+  const ob = b.sameDayOrder ?? 0;
+  if (oa !== ob) return oa - ob;
   return a.slug.localeCompare(b.slug);
 });
 
