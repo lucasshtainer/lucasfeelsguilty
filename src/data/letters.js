@@ -1,6 +1,7 @@
 import { myGiftOfMoments } from './letterMyGiftOfMoments.js';
+import { fourMonths } from './letterFourMonths.js';
 
-/** @typedef {{ slug: string, isoDate: string, displayDate: string, galleryLabel: string, title: string, subtitle?: string, image: string, paragraphs: string[], sameDayOrder?: number }} Letter */
+/** @typedef {{ slug: string, isoDate: string, displayDate: string, galleryLabel: string, title: string, subtitle?: string, image: string, paragraphs: string[], sameDayOrder?: number, password?: string }} Letter */
 
 /** @type {Letter[]} */
 export const letters = [
@@ -147,7 +148,8 @@ export const letters = [
       'With Immense Love,\nLucas'
     ]
   },
-  myGiftOfMoments
+  myGiftOfMoments,
+  fourMonths
 ].sort((a, b) => {
   const d = a.isoDate.localeCompare(b.isoDate);
   if (d !== 0) return d;

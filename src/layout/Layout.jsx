@@ -21,7 +21,10 @@ export default function Layout() {
               className={`letter-chip ${location.pathname === `/letter/${l.slug}` ? 'is-active' : ''}`}
             >
               <span className="letter-chip__date">{l.displayDate}</span>
-              <span className="letter-chip__label">{l.title}</span>
+              <span className="letter-chip__label">
+                {l.title}
+                {l.password ? <span className="letter-chip__lock" aria-hidden="true"> 🔒</span> : null}
+              </span>
             </Link>
           ))}
         </nav>

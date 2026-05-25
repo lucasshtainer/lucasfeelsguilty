@@ -83,3 +83,89 @@
 .letter-page__nav-spacer {
   visibility: hidden;
 }
+
+.letter-page--locked .letter-page__header {
+  margin-bottom: 1.5rem;
+}
+
+.letter-page__gate {
+  max-width: 22rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.letter-page__gate-lead {
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(247, 242, 255, 0.85);
+}
+
+.letter-page__gate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  text-align: left;
+}
+
+.letter-page__gate-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--purple-soft);
+}
+
+.letter-page__gate-input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--white);
+  background: rgba(20, 12, 32, 0.6);
+  border: 1px solid rgba(207, 159, 255, 0.35);
+  border-radius: 6px;
+}
+
+.letter-page__gate-input:focus {
+  outline: none;
+  border-color: var(--purple-soft);
+}
+
+.letter-page__gate-input--error {
+  border-color: rgba(255, 120, 140, 0.7);
+}
+
+.letter-page__gate-error {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 150, 165, 0.95);
+}
+
+.letter-page__gate-submit {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--white);
+  background: rgba(120, 70, 180, 0.55);
+  border: 1px solid rgba(207, 159, 255, 0.4);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.letter-page__gate-submit:hover {
+  background: rgba(140, 85, 200, 0.65);
+}
+
+.letter-page__gate-back {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: var(--purple-soft);
+  font-weight: 600;
+}
+
+.letter-page__gate-back:hover {
+  color: var(--white);
+}
