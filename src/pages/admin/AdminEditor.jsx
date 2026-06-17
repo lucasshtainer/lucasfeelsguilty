@@ -91,7 +91,7 @@ export default function AdminEditor({ isNew = false }) {
 
     try {
       await saveLetters([...withoutCurrent, next]);
-      setMessage('Saved! Changes are live.');
+      setMessage('Saved! Changes are written to disk and stay after you reload.');
       if (isNew) {
         navigate(`/admin/edit/${next.slug}`, { replace: true });
       }

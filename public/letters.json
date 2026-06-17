@@ -181,7 +181,17 @@
       "I know the sudden shift from high school to college may be strenuous at times, but it proves to be another mountain we must climb. Another adventure that we will partake in. Another walk around the block, shivering in the cold while discussing the drama in our lives. Luckily, this shift in location will only be a 20 minute car drive away. Instead of our mountain posing itself as Everest, we will experience the beauty, sandy pits of an ant hill. We will push through, day-by-day, living in the moment, with our love growing to new heights.",
       "Ava, I love you and can’t wait to see what’s ahead of us. To many more monthly celebrations alongside one another, long nights sneaking wine underneath the table, and aftercare rituals.",
       "With Immense Love,\nLucas"
-    ]
+    ],
+    "theme": {
+      "backgroundColor": "#4b0082",
+      "accentColor": "#cf9fff",
+      "textColor": "#f7f2ff"
+    },
+    "banner": {
+      "enabled": false,
+      "text": "",
+      "image": ""
+    }
   },
   {
     "slug": "2026-05-25-four-months",
@@ -207,5 +217,30 @@
       "Every relationship has its storms, but I wouldn't want to navigate them with anyone else. I love you—flaws, pressures, diamonds, and all. I can't wait for all the moments, the trips, and the quiet nights still ahead of us. Happy four months, my love. Here's to many more.",
       "With Trust,\nLucas"
     ]
+  },
+  {
+    "slug": "2026-07-01-five-months",
+    "isoDate": "2026-07-01",
+    "displayDate": "July 1, 2026",
+    "galleryLabel": "Jul 1 · Five months",
+    "title": "Happy five months",
+    "subtitle": "Whoop data, sleep scores, and missing you",
+    "image": "https://picsum.photos/seed/lfg-5mo/900/700",
+    "paragraphs": [
+      "Dear Ava,",
+      "Happy Five Months!",
+      "Throughout these last couple of months alongside you, I have learned one valuable lesson: Do not wear a Whoop around Ava Blavatnik. One glance at the shiny black alien technology on my wrist and my Queen immediately exclaims, \"that damn Whoop.\" Although your hatred for fitness-metric technology is well documented, its insight has shown me something surprising.",
+      "Since you left on June 5th, my average night of sleep has been horrible. More precisely, my sleep score has averaged around 70% instead of the 88% it normally hovers around, with a standard deviation of 4%. Breaking this down mathematically, my recent sleep scores have produced a z-score of roughly -4.5, meaning they are 4.5 standard deviations below my normal average. Statistically speaking, that is extraordinarily rare. Assuming a normal distribution, sleep scores this low would occur only about 3-4 times in a million observations.",
+      "\"So what does this mean?\" you might be asking. Well, there are only two possible explanations: Either I have suddenly developed a previously undiscovered sleep disorder that has baffled modern medicine, or I simply sleep much worse when you're not here. Given that one of those explanations is significantly more flattering to you, I think we should go with the second.",
+      "My Whoop has provided definitive scientific proof that I miss you, and your presence. New York is not the same without you, and I only feel at ease when we are blocks apart.",
+      "Five months is a bit of an odd milestone, so I felt that there would be much more to write for the sixth month, that's why I made this letter a bit of fun.",
+      "I love you and cannot wait to spend more time together.",
+      "With Yearn,\nLucas"
+    ],
+    "banner": {
+      "enabled": true,
+      "text": "Happy Five Months!",
+      "image": "https://picsum.photos/seed/lfg-capybaras/1200/600"
+    }
   }
 ]
