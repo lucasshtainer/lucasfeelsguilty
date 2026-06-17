@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "start": "node server/index.js",
+    "start:api": "node server/api-only.js",
     "export-letters": "node --input-type=module -e \"import { letters } from './src/data/letters.js'; import { writeFileSync } from 'fs'; writeFileSync('public/letters.json', JSON.stringify(letters, null, 2) + '\\n');\""
   },
   "dependencies": {

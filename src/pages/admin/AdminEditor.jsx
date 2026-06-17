@@ -90,8 +90,12 @@ export default function AdminEditor({ isNew = false }) {
     }
 
     try {
-      await saveLetters([...withoutCurrent, next]);
-      setMessage('Saved! Changes are written to disk and stay after you reload.');
+      const result = await saveLetters([...withoutCurrent, next]);
+      setMessage(
+        result?.mode === 'server'
+          ? 'Saved to the server — changes stay after reload for everyone.'
+          : 'Saved on this device — changes stay after reload here. Server sync is not available yet.'
+      );
       if (isNew) {
         navigate(`/admin/edit/${next.slug}`, { replace: true });
       }

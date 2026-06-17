@@ -1,15 +1,31 @@
 services:
   - type: web
     name: lucasfeelsguilty
-    runtime: node
+    runtime: static
     buildCommand: npm install && npm run build
-    startCommand: npm start
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_LETTERS_API
+        fromService:
+          type: web
+          name: lucasfeelsguilty-api
+          property: host
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+  - type: web
+    name: lucasfeelsguilty-api
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server/api-only.js
     envVars:
       - key: NODE_VERSION
         value: "22"
       - key: DATA_DIR
         value: /var/data
     disk:
-      name: lfg-data
+      name: lfg-api-data
       mountPath: /var/data
       sizeGB: 1

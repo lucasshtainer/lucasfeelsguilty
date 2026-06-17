@@ -5,6 +5,7 @@ import { handleLettersRequest, serveLettersJson } from './server/lettersApi.js';
 function lettersApiPlugin() {
   return {
     name: 'letters-api',
+    enforce: 'pre',
     configureServer(server) {
       server.middlewares.use('/letters.json', (req, res) => {
         if (req.method === 'GET') {
