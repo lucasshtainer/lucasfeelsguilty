@@ -6,9 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node server/index.js",
+    "export-letters": "node --input-type=module -e \"import { letters } from './src/data/letters.js'; import { writeFileSync } from 'fs'; writeFileSync('public/letters.json', JSON.stringify(letters, null, 2) + '\\n');\""
   },
   "dependencies": {
+    "express": "^5.2.1",
     "motion": "^12.23.24",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

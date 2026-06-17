@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { letterBySlug, letters } from '../data/letters.js';
+import { useLetters } from '../context/LettersContext.jsx';
+import { letterThemeVars } from '../types/letter.js';
 import './LetterPage.css';
 
 function unlockKey(slug) {
@@ -14,6 +15,7 @@ function isUnlocked(letter) {
 
 export default function LetterPage() {
   const { slug } = useParams();
+  const { letterBySlug, letters } = useLetters();
   const letter = letterBySlug(slug);
   const [passwordInput, setPasswordInput] = useState('');
   const [passwordError, setPasswordError] = useState(false);
@@ -27,6 +29,15 @@ export default function LetterPage() {
     }
   }, [slug, letter]);
 
+  useEffect(() => {
+    if (!letter?.theme?.backgroundColor) return;
+    const prev = document.body.style.backgroundColor;
+    document.body.style.backgroundColor = letter.theme.backgroundColor;
+    return () => {
+      document.body.style.backgroundColor = prev;
+    };
+  }, [letter]);
+
   if (!letter) {
     return (
       <div className="letter-page letter-page--missing">
@@ -39,6 +50,8 @@ export default function LetterPage() {
   const index = letters.findIndex((l) => l.slug === letter.slug);
   const prev = index > 0 ? letters[index - 1] : null;
   const next = index < letters.length - 1 ? letters[index + 1] : null;
+  const themeStyle = letterThemeVars(letter);
+  const showBanner = letter.banner?.enabled && (letter.banner.text || letter.banner.image);
 
   function handlePasswordSubmit(e) {
     e.preventDefault();
@@ -54,7 +67,7 @@ export default function LetterPage() {
 
   if (letter.password && !unlocked) {
     return (
-      <div className="letter-page letter-page--locked">
+      <div className="letter-page letter-page--locked" style={themeStyle}>
         <header className="letter-page__header">
           <p className="letter-page__date">{letter.displayDate}</p>
           <h1 className="letter-page__title">{letter.title}</h1>
@@ -96,7 +109,15 @@ export default function LetterPage() {
   }
 
   return (
-    <article className="letter-page">
+    <article className="letter-page" style={themeStyle}>
+      {showBanner ? (
+        <div className="letter-page__banner">
+          {letter.banner.image ? (
+            <img className="letter-page__banner-image" src={letter.banner.image} alt="" />
+          ) : null}
+          {letter.banner.text ? <p className="letter-page__banner-text">{letter.banner.text}</p> : null}
+        </div>
+      ) : null}
       <header className="letter-page__header">
         <p className="letter-page__date">{letter.displayDate}</p>
         <h1 className="letter-page__title">{letter.title}</h1>

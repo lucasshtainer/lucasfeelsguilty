@@ -104,3 +104,9 @@
   flex: 1;
   position: relative;
 }
+
+.letter-chips__loading {
+  padding: 0.55rem 0.85rem;
+  font-size: 0.88rem;
+  color: var(--purple-soft);
+}
